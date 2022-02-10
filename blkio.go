@@ -225,7 +225,7 @@ func createBlkioSettings(blkio *specs.LinuxBlockIO) []blkioSettings {
 	if blkio.Weight != nil {
 		settings = append(settings,
 			blkioSettings{
-				name:   "weight",
+				name:   "bfq.weight",
 				value:  blkio.Weight,
 				format: uintf,
 			})
@@ -242,7 +242,7 @@ func createBlkioSettings(blkio *specs.LinuxBlockIO) []blkioSettings {
 		if wd.Weight != nil {
 			settings = append(settings,
 				blkioSettings{
-					name:   "weight_device",
+					name:   "bfq.weight_device",
 					value:  wd,
 					format: weightdev,
 				})
